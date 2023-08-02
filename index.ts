@@ -10,6 +10,7 @@ export async function action(options: ActionOptions) {
         // Do something with the message
         console.log(message);
     });
-    emitter.start();
     http.listen(options);
+    await emitter.start();
+    http.server.close()
 }

@@ -1,37 +1,43 @@
 {
   "name": "substreams-sink-template",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Substreams Sink Template",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "substreams-sink-template": "dist/bin/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "substreams",
-    "streamingfast",
     "firehose",
     "thegraph",
+    "streamingfast",
     "pinax"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "start": "tsc && node ./dist/bin/cli.js run",
     "build": "tsc",
     "rollup": "rollup --config rollup.config.mjs",
     "linux": "npm run build && npm run rollup && ./scripts/build.linux.sh",
     "macos": "npm run build && npm run rollup && ./scripts/build.macos.sh",
-    "prepublishOnly": "npm run build",
-    "get-name": "echo $npm_package_name"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "substreams-sink": "latest"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "@tsconfig/recommended": "^1.0.2",
-    "rollup": "^3.27.0",
-    "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "@rollup/plugin-commonjs": "latest",
+    "@rollup/plugin-json": "latest",
+    "@rollup/plugin-node-resolve": "latest",
+    "@tsconfig/recommended": "latest",
+    "rollup": "latest",
+    "typescript": "latest",
+    "@types/node": "latest"
   }
 }

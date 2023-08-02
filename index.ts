@@ -1,4 +1,4 @@
-import { setup, commander, http } from "substreams-sink";
+import { setup, http } from "substreams-sink";
 
 import { type ActionOptions } from "./bin/cli.js";
 

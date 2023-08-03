@@ -5,7 +5,7 @@ node --experimental-sea-config sea-config.json
 
 # Copy the node executable. Supports asdf and nvm.
 NODE=$(asdf which node || nvm which node || command -v node)
-PACKAGE_NAME=$(cat package.json | jq .name)
+PACKAGE_NAME=$(cat package.json | jq .name | tr -d \")
 cp $NODE $PACKAGE_NAME-linux
 
 # Inject the blob into the copied binary.
